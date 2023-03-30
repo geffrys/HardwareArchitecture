@@ -81,8 +81,7 @@ conversionMantizas:
 	lsr r6, #1
 	add r6, r7 @the same way line 74
 	@1100	0100	1111	1111	1100	1100	0000	0000
-
-	@lsl r8, #8
+	
 	
 	@	0100	0100	1111	1111	1100	1100	0000	0000
 	@	1000	0000	0000	0000	0000	0000	0000	0000
@@ -90,9 +89,11 @@ conversionMantizas:
 
 		
 
-@suma:	add r8, r5, r6
-@resta:	sub r9, r5, r6
-@multi:	mul r10, r5, r6
+suma:	add r7, r5, r6
+	@1110	1110	1010	1011	0011	0011	0000	0000
+	
+resta:	sub r7, r5, r6
+@multi:	mul r7, r5, r6
 
 
 
