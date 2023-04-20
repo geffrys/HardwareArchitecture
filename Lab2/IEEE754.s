@@ -15,7 +15,7 @@ main:
 	ldr r0, =numbers
 	@ Cargamos los registros
 	ldr r1, [r0, #0]
-	ldr r2, [r0, #4] @number2 4 pos more in index	
+	ldr r2, [r0, #4] @number2 a 4 posiciones de memoria
 	
 	@ Hallaremos las potencias de ambos numeros
 potencia1:	mov r3, r1
@@ -71,7 +71,7 @@ conversionMantizas:
 	@	3	3	A	A	F	F
 	lsr r5, #1
 	ldr r7, [r0, #8]
-	add r5, r7 @at this point we add 80000000 to our mantiza. add one to the most significative number
+	add r5, r7 @En este punto le sumamos 80000000 a la mantiza, que seria como sumarle 1 en el ultimo numero
 	@1011	0011	1010	1010	1111	1111	0000	0000	
 
 	@lsl r7, #8
