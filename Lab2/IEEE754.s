@@ -57,7 +57,8 @@ comparacion:	cmp r3, r4
 	bpl mayor @ r3 mayor que r4
 	beq mantizas
 	mov r3, r4
-mayor: mov r3, r3 @ es redundante decir esto pero quizas lo hace mas claro
+mayor: 
+	mov r3, r3 @ es redundante decir esto pero quizas lo hace mas claro
 	
 @ la potencia queda en r3
 
@@ -108,8 +109,33 @@ mantizas:
 @ y estar pendiente de construir bien el formato
 
 
+@regresamos las mantizas a sus posiciones debidas
+lsr r4, #9
+lsr r5, #9
+
 @ a este punto tenemos libres r6 y r7
+
 suma:
+	@ sumamos las mantizas
+	add r6, r4, r5
+	add r6, r6, r3 	@ sumamos la potencia
+	str r6, [r0, #20]
+	@TODO: pendiente definicion del signo
+
+resta:
+	@ restamos las mantizas
+	sub r6, r4, r5
+	add r6, r6, r3
+	str r6, [r0, #24]
+	@TODO: pendiente definicion del signo
+
+multiplicacion:
+	mov r6, r4
+	mul r6, r5
+	add r6, r6, r3
+
+	@mul r8, r4, r5
+	
 
 
 @ suma:	add r7, r5, r6
